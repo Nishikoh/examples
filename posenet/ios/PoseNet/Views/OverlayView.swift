@@ -59,5 +59,5 @@ class OverlayView: UIView {
 
 private enum Traits {
   static let dot = (radius: CGFloat(5), color: UIColor.orange)
-  static let line = (width: CGFloat(1.0), color: UIColor.orange)
+  static let line = (width: CGFloat(2.0), color: UIColor.cyan)
 }
