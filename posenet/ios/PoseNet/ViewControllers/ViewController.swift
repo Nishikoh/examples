@@ -31,7 +31,7 @@ class ViewController: UIViewController {
   private var inferencedData: InferencedData?
 
   // Minimum score to render the result.
-  private let minimumScore: Float = 0.5
+  private let minimumScore: Float = 0.2
 
   // Relative location of `overlayView` to `previewView`.
   private var overlayViewFrame: CGRect?
