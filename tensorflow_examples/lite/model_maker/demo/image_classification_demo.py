@@ -19,7 +19,6 @@ from __future__ import print_function
 
 import os
 
-from absl import app
 from absl import flags
 from absl import logging
 
@@ -53,7 +52,7 @@ def download_demo_data(**kwargs):
 def run(data_dir,
         tflite_filename,
         label_filename,
-        spec='efficientnet_b0',
+        spec='efficientnet_lite0',
         **kwargs):
   """Runs demo."""
   spec = model_spec.get(spec)
@@ -76,10 +75,10 @@ def run(data_dir,
 def main(_):
   logging.set_verbosity(logging.INFO)
   data_dir = download_demo_data()
-  run(data_dir, FLAGS.tflite_filename, FLAGS.label_filename)
+  run(data_dir, FLAGS.tflite_filename, FLAGS.label_filename, epochs=10)
 
 
 if __name__ == '__main__':
   assert tf.__version__.startswith('2')
   define_flags()
-  app.run(main)
+  tf.compat.v1.app.run(main)
